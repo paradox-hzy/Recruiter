@@ -1,0 +1,52 @@
+{
+    "pages": [
+        "pages/login/index",
+        "pages/main/index",
+        "pages/home/index",
+        "pages/recruit/index",
+        "pages/apply/index",
+        "pages/jobDetail/index"
+    ],
+    "entryPagePath": "pages/login/index",
+    "window": {
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#F6F6F6",
+        "navigationBarTitleText": "Recruiter",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#7A7E83",
+        "selectedColor": "#3cc51f",
+        "borderStyle": "black",
+        "backgroundColor": "#F7F7F7",
+        "list": [
+            {
+                "pagePath": "pages/home/index",
+                "iconPath": "images/icon_component.png",
+                "selectedIconPath": "images/icon_component_HL.png",
+                "text": "主页"
+            },
+            {
+                "pagePath": "pages/recruit/index",
+                "iconPath": "images/icon_component.png",
+                "selectedIconPath": "images/icon_component_HL.png",
+                "text": "招工"
+            },
+            {
+                "pagePath": "pages/apply/index",
+                "iconPath": "images/icon_component.png",
+                "selectedIconPath": "images/icon_component_HL.png",
+                "text": "求职"
+            },
+            {
+                "pagePath": "pages/main/index",
+                "iconPath": "images/icon_component.png",
+                "selectedIconPath": "images/icon_component_HL.png",
+                "text": "我的"
+            }
+        ]
+    },
+    "sitemapLocation": "sitemap.json",
+    "style": "v2"
+}

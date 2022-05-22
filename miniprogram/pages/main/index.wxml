@@ -1,0 +1,6 @@
+<!--pages/main/index.wxml-->
+<view class="container">
+    <image src="{{portrait}}" mode="scaleToFit" class="portrait"></image>
+    <view>{{nickName}}</view>
+    <button type="primary" bindtap="logout" class="button">登出</button>
+</view>

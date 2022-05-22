@@ -1,0 +1,21 @@
+<view>
+    <view class='top_tip'>招聘信息</view>
+    <view class="box_text" wx:if="{{!jobs}}">暂时没有职位信息</view>
+    <view wx:if="{{jobs}}" class="code_box">
+        <view class="code_box_record">
+      <view class="code_box_record_title">招聘方</view>
+      <view class="code_box_record_title">职位</view>
+      <view class="code_box_record_title">月薪</view>
+      <view class="code_box_record_title">详细信息</view>
+    </view>
+    <view class="line"></view>
+        <view class="code_box_record" wx:for="{{jobs}}" wx:key="_id">
+            <view class="code_box_record_detail">{{item.isEnterprise ? '企业' : '个人'}}</view>
+            <view class="code_box_record_detail">{{item.jobtitle}}</view>
+            <view class="code_box_record_detail">{{item.salary}}</view>
+            <view class="code_box_record_detail">
+                <text class="text_link" bindtap="detail" data-jobid="{{item._id}}">查看</text>
+            </view>
+        </view>
+    </view>
+</view>

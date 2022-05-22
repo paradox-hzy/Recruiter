@@ -1,0 +1,5 @@
+<!--index.wxml-->
+<view class="container">
+    <image src="../../images/poster.png" mode="aspectFill" class="poster"></image>
+  <button type="primary" bindtap="login">登录</button>
+</view>
