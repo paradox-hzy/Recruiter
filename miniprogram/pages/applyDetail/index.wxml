@@ -1,0 +1,29 @@
+<view>
+    <image src="https://cdn.nlark.com/yuque/0/2022/png/22383375/1654704598615-e3418d2f-d737-4d22-9d17-9466242b42ca.png" mode="aspectFit" class="header"></image>
+    <view class='top_tip'>求职信息</view>
+    <view class="box_text" wx:if="{{!applys || applys.length == 0}}">暂时没有人应聘</view>
+    <view wx:if="{{applys && applys.length > 0}}" class="code_box">
+        <view class="code_box_record">
+            <view class="code_box_record_title">姓名</view>
+            <view class="code_box_record_title">详细信息</view>
+            <view class="code_box_record_title">简历</view>
+            <view class="code_box_record_title">标记</view>
+        </view>
+        <view class="line"></view>
+        <scroll-view scroll-y="true" style="height: 560rpx;">
+            <view class="code_box_record" wx:for="{{applys}}" wx:key="_id">
+                <view class="code_box_record_detail">{{item.name}}</view>
+                <view class="code_box_record_detail">
+                    <text class="text_link" bindtap="applyMsg" data-applyid="{{item._id}}">查看</text>
+                </view>
+                <view class="code_box_record_detail">
+                    <text class="text_link" bindtap="resume" data-src="{{item.resume}}">下载</text>
+                </view>
+                <view class="code_box_record_detail">
+                    <image src="../../images/icon_star.png" mode="aspectFit" class="icon" wx:if="{{item.star}}" bindtap="star" data-applyid="{{item._id}}" data-state="false"></image>
+                    <image src="../../images/icon_unstar.png" mode="aspectFit" class="icon" wx:if="{{!item.star}}" bindtap="star" data-applyid="{{item._id}}" data-state="true"></image>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

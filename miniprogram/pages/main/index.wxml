@@ -1,6 +1,9 @@
 <!--pages/main/index.wxml-->
 <view class="container">
+    <image src="https://cdn.nlark.com/yuque/0/2022/png/22383375/1654704598615-e3418d2f-d737-4d22-9d17-9466242b42ca.png" mode="aspectFit" class="header"></image>
     <image src="{{portrait}}" mode="scaleToFit" class="portrait"></image>
     <view>{{nickName}}</view>
-    <button type="primary" bindtap="logout" class="button">登出</button>
+    <button type="primary" bindtap="logout" class="button" id="logoutButton">登出</button>
+    <button type="primary" bindtap="text" class="button" id="textButton">用户说明书</button>
+    <button type="primary" bindtap="about" class="button" id="aboutButton">About Me</button>
 </view>

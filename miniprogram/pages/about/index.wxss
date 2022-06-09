@@ -1,0 +1,4 @@
+page {
+    font-family:'Times New Roman', Times, serif;
+    background-color: rgb(242, 248, 250);
+}

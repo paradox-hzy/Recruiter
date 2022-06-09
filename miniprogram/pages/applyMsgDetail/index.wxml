@@ -1,0 +1,35 @@
+<view>
+    <image src="https://cdn.nlark.com/yuque/0/2022/png/22383375/1654704598615-e3418d2f-d737-4d22-9d17-9466242b42ca.png" mode="aspectFit" class="header"></image>
+    <scroll-view scroll-y="true" class="body">
+        <form catchsubmit="formSubmit" catchreset="formReset">
+            <view class="line">
+                <text class="float-left">姓名：</text>
+                <input value="{{applyInfo.name}}" disabled="true" class="textInput float-right" />
+            </view>
+            <view class="line">
+                <text class="float-left">年龄：</text>
+                <input value="{{applyInfo.age}}" disabled="true" class="textInput float-right" />
+            </view>
+            <view class="line">
+                <text class="float-left">教育背景：</text>
+                <input value="{{applyInfo.education}}" disabled="true" class="textInput-small float-right" />
+            </view>
+            <view class="line">
+                <text class="float-left">电话：</text>
+                <input value="{{applyInfo.phone}}" disabled="true" class="textInput float-right" />
+            </view>
+            <view class="line">
+                <text class="float-left">邮件：</text>
+                <input value="{{applyInfo.email}}" disabled="true" class="textInput float-right" />
+            </view>
+            <view class="line">
+                <text class="float-left">简历：</text>
+                <button type="primary" size="mini" class="float-left uploadBotton" id="downButton" bindtap="shwoResume">下载</button>
+            </view>
+            <view class="box">
+                <text class="float-left">备注：</text>
+                <textarea value="{{applyInfo.note}}" placeholder="未填写备注" disabled="true" class="textArea float-right" />
+            </view>
+        </form>
+    </scroll-view>
+</view>

@@ -1,0 +1,43 @@
+<view>
+    <image src="https://cdn.nlark.com/yuque/0/2022/png/22383375/1654704598615-e3418d2f-d737-4d22-9d17-9466242b42ca.png" mode="aspectFit" class="header"></image>
+    <scroll-view scroll-y="true" class="body">
+        <form catchsubmit="formSubmit" catchreset="formReset">
+            <view class="line">
+                <text class="float-left">姓名：</text>
+                <input name="name" placeholder="输入姓名" class="textInput float-right" />
+            </view>
+            <view class="line">
+                <text class="float-left">年龄：</text>
+                <input name="age" placeholder="输入年龄" type="number" class="textInput float-right" />
+            </view>
+            <view class="line">
+                <text class="float-left">教育背景：</text>
+                <input name="education" placeholder="输入教育背景" class="textInput-small float-right" />
+            </view>
+            <view class="line">
+                <text class="float-left">电话：</text>
+                <input name="phone" placeholder="输入11位电话号码" type="number" class="textInput float-right" />
+            </view>
+            <view class="line">
+                <text class="float-left">邮件：</text>
+                <input name="email" placeholder="输入邮箱号码" class="textInput float-right" />
+            </view>
+            <view class="line">
+                <text class="float-left">简历：</text>
+                <button type="primary" size="mini" class="float-left uploadBotton" id="uploadButton" bindtap="uploadImg" wx:if="{{!haveResume}}">上传</button>
+                <button type="warn" size="mini" class="float-left uploadBotton" id="deleteButton" bindtap="clearImg" wx:if="{{haveResume}}">清空</button>
+                <text class="float-left" wx:if="{{haveResume}}" style="margin-left: 20rpx;">{{resumeShow}}</text>
+            </view>
+
+            <view class="box">
+                <text class="float-left">备注：</text>
+                <textarea name="note" placeholder="备注信息" class="textArea float-right" />
+            </view>
+
+            <view class="button-line">
+                <button size="mini" type="primary" class="subButton float-left"  id="subButton" formType="submit">投递</button>
+                <button size="mini" class="resButton float-right" formType="reset">清空</button>
+            </view>
+        </form>
+    </scroll-view>
+</view>

@@ -1,66 +1,73 @@
 // pages/recruit/index.js
 Page({
-
-    /**
-     * 页面的初始数据
-     */
     data: {
-
+        isEnterprise: true,
     },
 
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad(options) {
-
+    radioChange(e) {
+        this.setData({
+            isEnterprise: e.detail.value == "enterprise" ? true : false,
+        })
     },
 
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady() {
-
+    checkNum(num) {
+        return num > 0 && num % 1 == 0;
     },
 
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow() {
-
+    checkMsg(data) {
+        let failed = 0;
+        if (data.jobtitle === null) failed = 1;
+        if (data.salary === null || data.salary === NaN || !this.checkNum(data.salary)) failed = 1;
+        if (data.number === null || data.number === NaN || !this.checkNum(data.number)) failed = 1;
+        if (data.location === null) failed = 1;
+        return !failed;
     },
 
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide() {
-
+    formSubmit(e) {
+        const data = {
+            recruiterID: wx.getStorageSync('openID'),
+            isEnterprise: this.data.isEnterprise,
+            jobtitle: e.detail.value.jobtitle,
+            salary: parseInt(Number(e.detail.value.salary)),
+            number: parseInt(Number(e.detail.value.number)),
+            location: e.detail.value.location,
+            note: e.detail.value.note,
+        }
+        if (this.checkMsg(data)) {
+            wx.showLoading({
+                title: '',
+            });
+            wx.cloud.callFunction({
+                name: 'pushRecruitment',
+                data: {
+                    msg: data,
+                }
+            }).then((resp) => {
+                wx.hideLoading();
+                wx.reLaunch({
+                    url: '/pages/myRecruit/index',
+                });
+            }).catch((e) => {
+                console.log(e);
+                wx.hideLoading();
+                wx.showToast({
+                    title: '提交失败',
+                    icon: 'error',
+                    duration: 2000
+                })
+            });
+        } else {
+            wx.showToast({
+                title: '内容错误',
+                icon: 'error',
+                duration: 2000
+            })
+        }
     },
 
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload() {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh() {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom() {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage() {
-
+    formReset(e) {
+        this.setData({
+            isEnterprise: true,
+        })
     }
 })

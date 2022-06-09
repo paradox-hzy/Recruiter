@@ -1,0 +1,24 @@
+page {
+    font-family:'Times New Roman', Times, serif;
+    background-color: rgb(242, 248, 250);
+}
+
+.title {
+    font-size: 60rpx;
+    margin: 30rpx;
+    font-weight: bold;
+}
+
+.para {
+    margin: 30rpx;
+}
+
+.text {
+    margin-left: 10rpx;
+}
+
+.subtitle {
+    font-size: 38rpx;
+    font-weight: bold;
+    margin-bottom: 10rpx;
+}

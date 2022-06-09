@@ -1,0 +1,38 @@
+<view>
+    <image src="https://cdn.nlark.com/yuque/0/2022/png/22383375/1654704598615-e3418d2f-d737-4d22-9d17-9466242b42ca.png" mode="aspectFit" class="header"></image>
+    <scroll-view scroll-y="true" class="body">
+        <form catchsubmit="formSubmit" catchreset="formReset">
+            <view class="line">
+                <text class="float-left">招聘方：</text>
+                <radio-group class="float-right" bindchange="radioChange">
+                    <radio value="enterprise" class="margin-right" checked="{{isEnterprise}}" color="skyblue">企业</radio>
+                    <radio value="person" class="margin-right" checked="{{isEnterprise !== null && !isEnterprise}}" color="skyblue">个人</radio>
+                </radio-group>
+            </view>
+            <view class="line">
+                <text class="float-left">职位：</text>
+                <input name="jobtitle" value="{{jobInfo.jobtitle}}" placeholder="输入职位" class="textInput float-right" />
+            </view>
+            <view class="line">
+                <text class="float-left">月薪：</text>
+                <input name="salary" value="{{jobInfo.salary}}" placeholder="输入月薪" type="number" class="textInput float-right" />
+            </view>
+            <view class="line">
+                <text class="float-left">招聘人数：</text>
+                <input name="number" value="{{jobInfo.number}}" placeholder="输入招聘人数" type="number" class="textInput-small float-right" />
+            </view>
+            <view class="line">
+                <text class="float-left">地址：</text>
+                <input name="location" value="{{jobInfo.location}}" placeholder="输入地址" class="textInput float-right" />
+            </view>
+            <view class="box">
+                <text class="float-left">备注：</text>
+                <textarea name="note" value="{{jobInfo.note}}" placeholder="备注信息" class="textArea float-right" />
+            </view>
+            <view class="button-line">
+                <button size="mini" type="primary" class="subButton float-left" id="subButton" formType="submit">修改</button>
+                <button size="mini" class="resButton float-right" formType="reset">取消</button>
+            </view>
+        </form>
+    </scroll-view>
+</view>

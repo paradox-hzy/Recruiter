@@ -1,4 +1,3 @@
-// pages/home/index.js
 Page({
     data: {
         jobs: '',

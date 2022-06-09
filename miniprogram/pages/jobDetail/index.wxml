@@ -1,1 +1,32 @@
-<text>id: {{jobid}}</text>
+<view>
+    <image src="https://cdn.nlark.com/yuque/0/2022/png/22383375/1654704598615-e3418d2f-d737-4d22-9d17-9466242b42ca.png" mode="aspectFit" class="header"></image>
+    <scroll-view class="body" scroll-y="true">
+        <view class="line">
+            <text class="float-left">招聘方：</text>
+            <input value="{{jobInfo==='' ? '' : (jobInfo.isEnterprise ? '企业' : '个人')}}" disabled="true" class="textInput-small float-right" />
+        </view>
+        <view class="line">
+            <text class="float-left">职位：</text>
+            <input value="{{jobInfo.jobtitle}}" disabled="true" class="textInput float-right" />
+        </view>
+        <view class="line">
+            <text class="float-left">月薪：</text>
+            <input value="{{jobInfo.salary}}" disabled="true" class="textInput float-right" />
+        </view>
+        <view class="line">
+            <text class="float-left">招聘人数：</text>
+            <input value="{{jobInfo.number}}" disabled="true" class="textInput-small float-right" />
+        </view>
+        <view class="line">
+            <text class="float-left">地址：</text>
+            <input value="{{jobInfo.location}}" disabled="true" class="textInput float-right" />
+        </view>
+        <view class="box">
+            <text class="float-left">备注：</text>
+            <textarea value="{{jobInfo.note}}" placeholder="未填写备注" disabled="true" class="textArea float-right" />
+        </view>
+        <view class="button-line">
+            <button size="mini" type="primary" id="subButton" bindtap="job_apply">求职</button>
+        </view>
+    </scroll-view>
+</view>

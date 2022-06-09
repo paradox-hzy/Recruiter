@@ -1,2 +1,51 @@
-<!--pages/apply/index.wxml-->
-<text>求职</text>
+<view>
+    <view>
+        <image src="https://cdn.nlark.com/yuque/0/2022/png/22383375/1654704598615-e3418d2f-d737-4d22-9d17-9466242b42ca.png" mode="aspectFit" class="header"></image>
+        <text class="top_tip">搜索条件</text>
+        <view class="form-box">
+            <form catchsubmit="searchSubmit" catchreset="searchReset">
+                <view class="form-picker">
+                    <picker bindchange="pickerChange" value="{{index}}" range="{{array}}">
+                        <view style="margin-top: 10rpx;">
+                            招聘方: {{array[index]}}
+                        </view>
+                    </picker>
+                </view>
+                <view class="form-input">
+                    <view style="margin: 0; width: 80rpx; margin-top: 10rpx; float: left;">
+                        <text>职位: </text>
+                    </view>
+                    <input name="jobtitle" class="input-large" />
+                </view>
+                <view class="form-input">
+                    <view style="margin: 0; width: 140rpx; margin-top: 10rpx; float: left;">
+                        <text>最小月薪: </text>
+                    </view>
+                    <input name="minsalary" class="input-small" type="number" />
+                </view>
+                <button size="mini" type="primary" class="subButton float-left" id="searchButton" formType="submit">搜索</button>
+                <button size="mini" class="resButton float-right" formType="reset">清空</button>
+            </form>
+        </view>
+    </view>
+    <view class="box_text" wx:if="{{!jobs}}">暂时没有职位信息</view>
+    <view wx:if="{{jobs}}" class="code_box">
+        <view class="code_box_record">
+            <view class="code_box_record_title">招聘方</view>
+            <view class="code_box_record_title">职位</view>
+            <view class="code_box_record_title">月薪</view>
+            <view class="code_box_record_title">详细信息</view>
+        </view>
+        <view class="line"></view>
+        <scroll-view scroll-y="true" style="height: 390rpx;">
+            <view class="code_box_record" wx:for="{{jobs}}" wx:key="_id">
+                <view class="code_box_record_detail">{{item.isEnterprise ? '企业' : '个人'}}</view>
+                <view class="code_box_record_detail">{{item.jobtitle}}</view>
+                <view class="code_box_record_detail">{{item.salary}}</view>
+                <view class="code_box_record_detail">
+                    <text class="text_link" bindtap="detail" data-jobid="{{item._id}}">查看</text>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

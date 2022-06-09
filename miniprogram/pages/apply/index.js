@@ -1,66 +1,89 @@
-// pages/apply/index.js
+// pages/home/index.js
 Page({
-
-    /**
-     * 页面的初始数据
-     */
     data: {
-
+        searchCriteria: {
+            isEnterprise: null,
+            jobtitle: null,
+            minsalary: null,
+        },
+        index: 0,
+        array: ['所有', '企业', '个人'],
+        jobs: '',
     },
 
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad(options) {
-
+    getData() {
+        wx.showLoading({
+            title: '',
+        });
+        wx.cloud.callFunction({
+            name: 'selectJobs',
+            data: this.data.searchCriteria,
+        }).then((resp) => {
+            this.setData({
+                jobs: resp.result.data
+            });
+            wx.hideLoading();
+        }).catch((e) => {
+            console.log(e);
+            wx.hideLoading();
+            wx.showToast({
+                title: '获取失败',
+                icon: 'error',
+                duration: 2000
+            })
+        });
     },
 
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady() {
-
+    onLoad() {
+        this.getData()
     },
 
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow() {
-
+    detail(e) {
+        wx.navigateTo({
+            url: `/pages/jobDetail/index?jobid=${e.currentTarget.dataset.jobid}`,
+        })
     },
 
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide() {
-
+    pickerChange(e) {
+        this.setData({
+            index: e.detail.value
+        })
     },
 
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload() {
+    searchSubmit(e) {
+        if (this.data.index == 0) {
+            this.data.searchCriteria.isEnterprise = null;
+        } else if (this.data.index == 1) {
+            this.data.searchCriteria.isEnterprise = true;
+        } else {
+            this.data.searchCriteria.isEnterprise = false;
+        }
+        if (e.detail.value.minsalary !== null && e.detail.value.minsalary != '') {
+            this.data.searchCriteria.minsalary = parseInt(Number(e.detail.value.minsalary));
+            if(this.data.searchCriteria.minsalary == NaN || !(this.data.searchCriteria.minsalary > 0 && this.data.searchCriteria.minsalary % 1 == 0)) {
+                wx.showToast({
+                    title: '搜索条件错误',
+                    icon: 'error',
+                    duration: 2000
+                })
+                return;
+            }
+        }
+        this.data.searchCriteria.jobtitle = e.detail.value.jobtitle;
 
+        this.onLoad()
     },
 
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh() {
+    searchReset(e) {
+        this.pickerChange({
+            detail: {
+                value: 0
+            }
+        })
+        this.data.searchCriteria.isEnterprise = null;
+        this.data.searchCriteria.minsalary = null;
+        this.data.searchCriteria.jobtitle = null;
 
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom() {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage() {
-
+        this.onLoad()
     }
 })

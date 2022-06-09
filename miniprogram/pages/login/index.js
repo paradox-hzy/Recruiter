@@ -24,7 +24,7 @@ Page({
                     title: '',
                 });
                 wx.cloud.callFunction({
-                    name: 'getOpenID',
+                    name: 'getOpenId',
                 }).then((resp) => {
                     wx.setStorageSync('openID', resp.result.openid)
                     wx.hideLoading();

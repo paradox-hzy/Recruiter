@@ -1,5 +1,5 @@
 <!--index.wxml-->
 <view class="container">
-    <image src="../../images/poster.png" mode="aspectFill" class="poster"></image>
+    <image src="https://cdn.nlark.com/yuque/0/2022/png/22383375/1654704584927-e0387c48-9214-441e-9de2-c20464027825.png?x-oss-process=image%2Fresize%2Cw_814%2Climit_0" mode="aspectFill" class="poster"></image>
   <button type="primary" bindtap="login">登录</button>
 </view>

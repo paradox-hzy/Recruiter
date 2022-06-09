@@ -1,0 +1,118 @@
+/* pages/recruit/index.wxss */
+.body {
+    width: 700rpx;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 10rpx;
+    height: 850rpx;
+}
+
+.line {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20rpx;
+    height: 90rpx;
+    margin: 30rpx;
+}
+
+.box {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20rpx;
+    margin: 30rpx;
+    height: 200rpx;
+}
+
+.margin-right {
+    margin-right: 30rpx;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.textInput {
+    border-style: solid;
+    border-width: 3rpx;
+    border-color: rgb(60, 61, 60);
+    border-radius: 5rpx;
+    width: 500rpx;
+}
+
+.textInput-small {
+    border-style: solid;
+    border-width: 3rpx;
+    border-color: rgb(60, 61, 60);
+    border-radius: 5rpx;
+    width: 420rpx;
+}
+
+.textArea {
+    border-style: solid;
+    border-width: 3rpx;
+    border-color: rgb(60, 61, 60);
+    border-radius: 5rpx;
+    width: 500rpx;
+    height: 200rpx;
+}
+
+.button-line {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20rpx;
+    height: 150rpx;
+    margin: 30rpx;
+}
+
+.subButton {
+    margin-top: 50rpx;
+    margin-left: 150rpx;
+    width: 200rpx;
+    border-style: solid;
+    border-color: rgb(63, 62, 62);
+    border-width: 3rpx;
+}
+
+.resButton {
+    margin-top: 50rpx;
+    margin-right: 150rpx;
+    width: 200rpx;
+    border-style: solid;
+    border-color: rgb(63, 62, 62);
+    border-width: 3rpx;
+}
+
+.uploadBotton {
+    margin-left: 40rpx;
+    width: 200rpx;
+    border-style: solid;
+    border-color: rgb(63, 62, 62);
+    border-width: 3rpx;
+}
+
+#uploadButton {
+    background-color: skyblue;
+    height: 50rpx;
+    font-size: 26rpx;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#deleteButton {
+    height: 50rpx;
+    font-size: 26rpx;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#subButton {
+    background-color: skyblue;
+}
+
+.header {
+    width: 100%;
+    height: 320rpx;
+}
+

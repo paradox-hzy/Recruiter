@@ -1,0 +1,13 @@
+.picture {
+    width: 100%;
+}
+
+.show-pic {
+    height: 1000rpx;
+    margin-top: 50rpx;
+    margin-bottom: 50rpx;
+}
+
+#saveButton {
+    background-color: skyblue;
+}

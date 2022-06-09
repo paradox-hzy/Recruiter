@@ -22,5 +22,17 @@ Page({
         wx.reLaunch({
             url: '/pages/login/index',
         });
+    },
+
+    text() {
+        wx.navigateTo({
+          url: '/pages/instruction/index',
+        })
+    },
+
+    about() {
+        wx.navigateTo({
+            url: '/pages/about/index',
+          })
     }
 })

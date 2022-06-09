@@ -1,0 +1,54 @@
+<view>
+    <view class="title">用户说明书</view>
+    <view class="para">
+        <view style="background-color: lightgray; width: 100%; height: 2rpx; margin-bottom: 20rpx;"></view>
+        <view class="subtitle">查看招聘信息</view>
+        <view class="text">
+            在主页显示所有的招聘信息，点击“查看”进入招聘详情界面。
+        </view>
+    </view>
+    <view class="para">
+        <view style="background-color: lightgray; width: 100%; height: 2rpx; margin-bottom: 20rpx;"></view>
+        <view class="subtitle">搜索招聘信息</view>
+        <view class="text">
+            在求职界面可以按照招聘方、职位、月薪搜索招聘信息。
+        </view>
+    </view>
+    <view class="para">
+        <view style="background-color: lightgray; width: 100%; height: 2rpx; margin-bottom: 20rpx;"></view>
+        <view class="subtitle">发布招聘信息</view>
+        <view class="text">
+            在招工界面点击“发布招聘信息”，填写相关内容即可发布招聘信息。
+        </view>
+    </view>
+    <view class="para">
+        <view style="background-color: lightgray; width: 100%; height: 2rpx; margin-bottom: 20rpx;"></view>
+        <view class="subtitle">编辑招聘信息</view>
+        <view class="text">
+            在招工界面显示用户个人发布的招聘信息。点击“编辑”，修改相关内容即可编辑招聘信息。
+        </view>
+    </view>
+    <view class="para">
+        <view style="background-color: lightgray; width: 100%; height: 2rpx; margin-bottom: 20rpx;"></view>
+        <view class="subtitle">删除招聘信息</view>
+        <view class="text">
+            在招工界面显示用户个人发布的招聘信息。点击“删除”以删除对应招聘信息。
+        </view>
+    </view>
+    <view class="para">
+        <view style="background-color: lightgray; width: 100%; height: 2rpx; margin-bottom: 20rpx;"></view>
+        <view class="subtitle">投递求职信息</view>
+        <view class="text">
+            在招聘详情界面可以查看招聘的详细信息。点击求职，输入个人信息，上传简历即可投递求职信息。
+        </view>
+    </view>
+    <view class="para">
+        <view style="background-color: lightgray; width: 100%; height: 2rpx; margin-bottom: 20rpx;"></view>
+        <view class="subtitle">管理求职信息</view>
+        <view class="text">
+            在招工界面显示用户个人发布的招聘信息，点击“查看”进入求职信息管理界面。界面中显示该项招聘信息的求职信息。
+            管理员可以点击“查看”以查看求职信息的详情，点击“下载”以查看和下载求职者的简历，并且可以对求职信息进行标记和取消标记。
+        </view>
+    </view>
+
+</view>
